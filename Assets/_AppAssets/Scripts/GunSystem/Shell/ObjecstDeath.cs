@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShellController : MonoBehaviour
+public class ObjecstDeath : MonoBehaviour
 {
 
     [SerializeField] private float deathTime;
