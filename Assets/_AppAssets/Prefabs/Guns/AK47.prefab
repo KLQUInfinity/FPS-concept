@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunShootPoint: {fileID: 9151849317054174123}
   bulletShellEjectionPoint: {fileID: 9151849318559866830}
-  gunType: 2
+  gunType: 1
   rpm: 600
   aimSwitchSpeed: 7
   gunAnchor: {fileID: 6469796975048096089}
@@ -565,10 +565,11 @@ MonoBehaviour:
   adsPos: {fileID: 3696530761510800082}
   canBeShot:
     serializedVersion: 2
-    m_Bits: 4407
+    m_Bits: 311
   bloom: 20
   recoil: 10
   kickBack: 0.1
+  damageValue: 100
 --- !u!114 &4080664010878687132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +594,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f017fc54c18e7fa4b8ed639c1162bd2e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7e7bf93991d272840953a8d34fdf4e98, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

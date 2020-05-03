@@ -14,6 +14,7 @@ public class Gun : MonoBehaviourPunCallbacks
     [SerializeField] private Transform hipPos, adsPos;
     [SerializeField] protected LayerMask canBeShot;
     [SerializeField] protected float bloom, recoil, kickBack;
+    [SerializeField] protected int damageValue;
 
     protected float secondsBetweenShot;
     protected float nextPossibleShootTime;
@@ -32,11 +33,12 @@ public class Gun : MonoBehaviourPunCallbacks
     private void Update()
     {
         if (!photonView.IsMine) return;
-        SwitchAim(Input.GetMouseButton(1));
+        photonView.RPC("SwitchAim", RpcTarget.All, Input.GetMouseButton(1));
 
         transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, Time.deltaTime * 4f);
     }
 
+    [PunRPC]
     public void SwitchAim(bool isAiming)
     {
         if (isAiming)
@@ -100,6 +102,7 @@ public class Gun : MonoBehaviourPunCallbacks
                 if (hit.collider.gameObject.layer == 12)
                 {
                     // RPC call to damage Player 
+                    hit.transform.gameObject.GetPhotonView().RPC("TakeDamage", RpcTarget.All, damageValue);
                 }
             }
         }
@@ -109,7 +112,6 @@ public class Gun : MonoBehaviourPunCallbacks
     {
         transform.Rotate(-recoil, 0, 0);
         transform.position -= transform.forward * kickBack;
-
     }
 }
 
