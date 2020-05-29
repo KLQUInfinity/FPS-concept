@@ -477,6 +477,7 @@ MonoBehaviour:
   bloom: 20
   recoil: 10
   kickBack: 0.1
+  damageValue: 50
 --- !u!114 &5492284508173914265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +603,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 2
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8736931321994183470}

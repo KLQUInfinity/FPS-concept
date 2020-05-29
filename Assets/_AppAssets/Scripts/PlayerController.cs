@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviourPunCallbacks
@@ -48,6 +49,15 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     #endregion
 
+    #region PlayerUI
+    public int maxHealth;
+
+    [SerializeField] private Canvas playerCanvas;
+    [SerializeField] private Slider otherHealthSlider;
+
+    private int currHealth;
+    #endregion
+
     #region Others
     [Header("Others")]
     public Transform weaponContainer;
@@ -60,9 +70,22 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        currHealth = maxHealth;
+        playerCanvas.enabled = !photonView.IsMine;
+        if (photonView.IsMine)
+        {
+            LevelUIManager.Instance.InitPlayerHealth(maxHealth, currHealth);
+        }
+        else
+        {
+            otherHealthSlider.maxValue = maxHealth;
+            otherHealthSlider.value = maxHealth;
+
+            ImportantThings.SetLayerRecursively(gameObject, 12);
+        }
+
         cameraParent.SetActive(photonView.IsMine);
 
-        if (!photonView.IsMine) { gameObject.layer = 12; }
 
         baseFOV = normalCam.fieldOfView;
         if (Camera.main)
@@ -159,6 +182,26 @@ public class PlayerController : MonoBehaviourPunCallbacks
         else if (Input.GetButton("Fire1") && (gun.gunType == GunType.Semi || gun.gunType == GunType.Auto))
         {
             gun.photonView.RPC("ShootContinuous", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void TakeDamage(int damageValue)
+    {
+        currHealth -= damageValue;
+        if (photonView.IsMine)
+        {
+            LevelUIManager.Instance.SetPlayerHealthValue(currHealth);
+        }
+        else
+        {
+            otherHealthSlider.value = currHealth;
+        }
+
+
+        if (currHealth <= 0)
+        {
+            print("you died");
         }
     }
 

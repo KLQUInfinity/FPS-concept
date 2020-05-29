@@ -569,6 +569,7 @@ MonoBehaviour:
   bloom: 20
   recoil: 10
   kickBack: 0.1
+  damageValue: 100
 --- !u!114 &4080664010878687132
 MonoBehaviour:
   m_ObjectHideFlags: 0

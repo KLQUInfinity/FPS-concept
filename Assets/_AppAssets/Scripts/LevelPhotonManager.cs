@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class GameManager : MonoBehaviour
+public class LevelPhotonManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string playerPrefab;
     [SerializeField] private Transform[] spawnPoints;
 
     private void Start()
     {
-        Spawn();
+        //Spawn();
     }
 
     public void Spawn()
