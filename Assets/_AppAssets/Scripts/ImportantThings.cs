@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class ImportantThings
 {
+    #region Data
+    public const string MapKey = "Map";
+    #endregion
+
+    #region Methods
     public static void SetLayerRecursively(GameObject obj, int newLayer)
     {
         if (null == obj)
@@ -22,4 +27,5 @@ public static class ImportantThings
             SetLayerRecursively(child.gameObject, newLayer);
         }
     }
+    #endregion
 }
