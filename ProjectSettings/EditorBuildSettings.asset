@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_AppAssets/_Scenes/MainMenu.unity
+    path: Assets/_AppAssets/_Scenes/Test Scenes/MainMenu.unity
     guid: d98cb0ee1a96efc4cbf6c2accbc59f44
   - enabled: 1
-    path: Assets/_AppAssets/_Scenes/Map.unity
+    path: Assets/_AppAssets/_Scenes/Test Scenes/Map.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Plugins/GameCreator/Examples/Scenes/Example-Intro.unity
