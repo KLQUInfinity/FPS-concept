@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviourPunCallbacks
 {
-    #region Movement
+    #region Movement Variables
     [Header("Movement")]
     [SerializeField] private Camera normalCam;
     [SerializeField] private GameObject cameraParent;
@@ -43,22 +44,24 @@ public class PlayerController : MonoBehaviourPunCallbacks
     #endregion
     #endregion
 
-    #region Shooting
+    #region Shooting Variables
     [Header("Shooting")]
     [SerializeField] private Gun gun;
 
     #endregion
 
-    #region PlayerUI
+    #region PlayerUI Variables
     public int maxHealth;
+    [HideInInspector] public bool isActive = false;
 
     [SerializeField] private Canvas playerCanvas;
     [SerializeField] private Slider otherHealthSlider;
+    [SerializeField] private TextMeshProUGUI playerName;
 
     private int currHealth;
     #endregion
 
-    #region Others
+    #region Others Variables
     [Header("Others")]
     public Transform weaponContainer;
     public bool isHeadBob;
@@ -66,14 +69,24 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float headbobCounter;
     private Vector3 weaponContainerOrigin;
     private Vector3 targetWeaponContainerPos;
+
     #endregion
 
-    private void Start()
+    #region Photon Variables
+    [SerializeField] private int teamIndex = 0;
+    #endregion
+
+    [PunRPC]
+    public void ActivatePlayer()
     {
         currHealth = maxHealth;
         playerCanvas.enabled = !photonView.IsMine;
         if (photonView.IsMine)
         {
+            if (Camera.main)
+            {
+                Camera.main.enabled = false;
+            }
             LevelUIManager.Instance.InitPlayerHealth(maxHealth, currHealth);
         }
         else
@@ -86,55 +99,59 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         cameraParent.SetActive(photonView.IsMine);
 
-
         baseFOV = normalCam.fieldOfView;
-        if (Camera.main)
-        {
-            Camera.main.enabled = false;
-        }
+
         myRB = GetComponent<Rigidbody>();
 
         weaponContainerOrigin = weaponContainer.localPosition;
+
+        isActive = true;
     }
 
     private void Update()
     {
-        if (!photonView.IsMine) return;
-
-        Shoot();
-        if (isHeadBob)
+        if (isActive)
         {
-            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+            if (!photonView.IsMine) return;
+
+            Shoot();
+            if (isHeadBob)
             {
-                HeadBob(headbobCounter, 0.025f, 0.025f);
-                headbobCounter += Time.deltaTime;
-                weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 2);
-            }
-            else if (!isSprinting)
-            {
-                HeadBob(headbobCounter, 0.035f, 0.035f);
-                headbobCounter += Time.deltaTime * 3;
-                weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 6);
+                if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+                {
+                    HeadBob(headbobCounter, 0.025f, 0.025f);
+                    headbobCounter += Time.deltaTime;
+                    weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 2);
+                }
+                else if (!isSprinting)
+                {
+                    HeadBob(headbobCounter, 0.035f, 0.035f);
+                    headbobCounter += Time.deltaTime * 3;
+                    weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 6);
+                }
+                else
+                {
+                    HeadBob(headbobCounter, 0.15f, 0.075f);
+                    headbobCounter += Time.deltaTime * 7;
+                    weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 10);
+                }
             }
             else
             {
-                HeadBob(headbobCounter, 0.15f, 0.075f);
-                headbobCounter += Time.deltaTime * 7;
-                weaponContainer.localPosition = Vector3.Lerp(weaponContainer.localPosition, targetWeaponContainerPos, Time.deltaTime * 10);
+                weaponContainer.localPosition = weaponContainerOrigin;
             }
-        }
-        else
-        {
-            weaponContainer.localPosition = weaponContainerOrigin;
         }
     }
 
     private void FixedUpdate()
     {
-        if (!photonView.IsMine) return;
+        if (isActive)
+        {
+            if (!photonView.IsMine) return;
 
-        Move();
-        Jump();
+            Move();
+            Jump();
+        }
     }
 
     public void Move()
@@ -208,5 +225,42 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private void HeadBob(float z, float xIntensity, float yIntensity)
     {
         targetWeaponContainerPos = weaponContainerOrigin + new Vector3(Mathf.Cos(z) * xIntensity, Mathf.Sin(z * 2) * yIntensity, 0);
+    }
+
+    [PunRPC]
+    public void SetTeamIndex(int mteamIndex)
+    {
+        teamIndex = mteamIndex;
+    }
+
+    public int GetTeamIndex()
+    {
+        return teamIndex;
+    }
+
+    [PunRPC]
+    public void SetPlayerName(string name, int teamCanSeeIndex)
+    {
+        if (teamIndex != 0)
+        {
+            if (teamIndex != teamCanSeeIndex)
+            {
+                TogglePlayerName(false);
+            }
+            else if (teamIndex == teamCanSeeIndex)
+            {
+                TogglePlayerName(true);
+                playerName.text = name;
+            }
+        }
+        else
+        {
+            TogglePlayerName(false);
+        }
+    }
+
+    public void TogglePlayerName(bool enabled)
+    {
+        playerName.gameObject.SetActive(enabled);
     }
 }

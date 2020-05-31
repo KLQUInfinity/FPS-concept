@@ -43,8 +43,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void JoinRoom(RoomInfo room)
+    public void JoinRoom(RoomInfo room, string profileUserName)
     {
+        //PhotonNetwork.LocalPlayer.SetCustomProperties()
+        PhotonNetwork.NickName = profileUserName;
         PhotonNetwork.JoinRoom(room.Name);
     }
 
@@ -59,8 +61,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void Create(string roomName, int maxPlayerCount)
+    public void Create(string roomName, int maxPlayerCount, string profileUserName)
     {
+        PhotonNetwork.NickName = profileUserName;
+
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = (byte)maxPlayerCount;
 

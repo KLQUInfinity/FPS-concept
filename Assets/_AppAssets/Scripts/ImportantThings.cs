@@ -6,6 +6,8 @@ public static class ImportantThings
 {
     #region Data
     public const string MapKey = "Map";
+    public const string PlayerTag = "Player";
+    public const string TeamIndex = "TeamIndex";
     #endregion
 
     #region Methods

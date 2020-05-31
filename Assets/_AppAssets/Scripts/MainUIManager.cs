@@ -124,7 +124,7 @@ public class MainUIManager : MonoBehaviour
 
             RoomInfo room = selectedRoomInfo;
 
-            mPhotonManager.JoinRoom(room);
+            mPhotonManager.JoinRoom(room, profileUserName);
         }
     }
 
@@ -170,10 +170,12 @@ public class MainUIManager : MonoBehaviour
 
     public void CreateRoom()
     {
+        VerifyUsername();
+
         if (!string.IsNullOrEmpty(roomNameIN.text) && !string.IsNullOrWhiteSpace(roomNameIN.text)
             && !string.IsNullOrEmpty(roomMaxPlayerCount.text) && !string.IsNullOrWhiteSpace(roomMaxPlayerCount.text))
         {
-            mPhotonManager.Create(roomNameIN.text, int.Parse(roomMaxPlayerCount.text));
+            mPhotonManager.Create(roomNameIN.text, int.Parse(roomMaxPlayerCount.text), profileUserName);
         }
         else
         {

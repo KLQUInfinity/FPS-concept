@@ -40,6 +40,10 @@ MonoBehaviour:
   - ShootContinuous
   - SwitchAim
   - TakeDamage
+  - SetTeamIndex
+  - SetPlayerName
+  - ActivatePlayer
+  - ActivatePlayerName
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

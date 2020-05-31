@@ -28,7 +28,10 @@ public class CameraLook : MonoBehaviourPunCallbacks
         SetY();
         SetX();
 
-        UpdateCursorLock();
+        if (GetComponent<PlayerController>().isActive)
+        {
+            UpdateCursorLock();
+        }
     }
 
     private void SetY()

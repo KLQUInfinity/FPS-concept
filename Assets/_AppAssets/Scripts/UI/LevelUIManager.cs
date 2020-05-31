@@ -22,9 +22,23 @@ public class LevelUIManager : MonoBehaviour
     }
     #endregion
 
-    #region MainUIMenu
-    [Header("MainUIMenu")]
+    #region TeamMenu
+    [Header("TeamMenu")]
+    [SerializeField] private Canvas teamCanvas;
 
+    public void ChoseTeam(int teamIndex)
+    {
+        teamCanvas.enabled = false;
+
+        LevelPhotonManager.Instance.InitPlayer(teamIndex);
+
+        gameplayCanvas.enabled = true;
+    }
+    #endregion
+
+    #region GameplayMenu
+    [Header("GameplayMenu")]
+    [SerializeField] private Canvas gameplayCanvas;
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private TextMeshProUGUI playerHealthPercentageTxt;
 
