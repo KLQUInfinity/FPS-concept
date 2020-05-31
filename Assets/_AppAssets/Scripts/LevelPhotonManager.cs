@@ -62,12 +62,10 @@ public class LevelPhotonManager : MonoBehaviourPunCallbacks, IPunInstantiateMagi
                 int goTeamIndex = (int)go.GetPhotonView().Owner.CustomProperties[ImportantThings.TeamIndex];
                 if (player.GetComponent<PlayerController>().GetTeamIndex() == goTeamIndex)
                 {
-                    print("aaa");
                     go.GetComponent<PlayerController>().TogglePlayerName(true);
                 }
                 else
                 {
-                    print("bbb");
                     go.GetComponent<PlayerController>().TogglePlayerName(false);
                 }
             }
