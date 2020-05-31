@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppSettings:
     AppIdRealtime: 911c4806-c65f-466d-a8f8-0519a25a1ae3
-    AppIdChat: 
-    AppIdVoice: 
+    AppIdChat: 41231bec-41a0-418d-9b35-f89f527b12bb
+    AppIdVoice: 6ee7725a-ef0d-4c9a-95fb-b32c735d77a0
     AppVersion: 
     UseNameServer: 1
     FixedRegion: us
@@ -44,6 +44,7 @@ MonoBehaviour:
   - SetPlayerName
   - ActivatePlayer
   - ActivatePlayerName
+  - ChangeColour
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
