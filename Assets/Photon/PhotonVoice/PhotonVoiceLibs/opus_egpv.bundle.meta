@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: 2f0da45daa79a4257b9e5aaf4c9baefb
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1460399375
 licenseType: Store
 PluginImporter:
@@ -17,11 +18,70 @@ PluginImporter:
       enabled: 0
       settings: {}
     Editor:
+=======
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      '': Linux
+    second:
+      enabled: 1
+      settings:
+        CPU: x86
+  - first:
+      '': LinuxUniversal
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      '': OSXIntel
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      '': OSXIntel64
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      '': WP8
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+        DontProcess: False
+        PlaceholderPath: 
+  - first:
+      Android: Android
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 1
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
         OS: OSX
+<<<<<<< HEAD
     Linux:
       enabled: 1
       settings:
@@ -59,6 +119,47 @@ PluginImporter:
       settings:
         CPU: AnyCPU
     WindowsStoreApps:
+=======
+  - first:
+      Facebook: Win
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Facebook: Win64
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: Linux64
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: OSXUniversal
+    second:
+      enabled: 1
+      settings:
+        CPU: 
+  - first:
+      Standalone: Win
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: Win64
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Windows Store Apps: WindowsStoreApps
+    second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 0
       settings:
         CPU: AnyCPU
@@ -66,7 +167,13 @@ PluginImporter:
         PlaceholderPath: 
         SDK: AnySDK
         ScriptingBackend: AnyScriptingBackend
+<<<<<<< HEAD
     iOS:
+=======
+  - first:
+      iPhone: iOS
+    second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 0
       settings:
         CompileFlags: 

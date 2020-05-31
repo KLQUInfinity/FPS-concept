@@ -94,12 +94,21 @@ namespace Photon.Voice.Unity.Editor
             this.skipDeviceChecksSp = this.serializedObject.FindProperty("skipDeviceChangeChecks");
             this.stopRecordingWhenPausedSp = this.serializedObject.FindProperty("stopRecordingWhenPaused");
             #if UNITY_IOS
+<<<<<<< HEAD
             useCustomAudioSessionParametersSp = serializedObject.FindProperty("useCustomAudioSessionParameters");
             audioSessionPresetIndexSp = serializedObject.FindProperty("audioSessionPresetIndex");
             audioSessionParametersSp = serializedObject.FindProperty("audioSessionParameters");
             audioSessionParametersCategorySp = audioSessionParametersSp.FindPropertyRelative("Category");
             audioSessionParametersModeSp = audioSessionParametersSp.FindPropertyRelative("Mode");
             audioSessionParametersCategoryOptionsSp = audioSessionParametersSp.FindPropertyRelative("CategoryOptions");
+=======
+            this.useCustomAudioSessionParametersSp = this.serializedObject.FindProperty("useCustomAudioSessionParameters");
+            this.audioSessionPresetIndexSp = this.serializedObject.FindProperty("audioSessionPresetIndex");
+            this.audioSessionParametersSp = this.serializedObject.FindProperty("audioSessionParameters");
+            this.audioSessionParametersCategorySp = this.audioSessionParametersSp.FindPropertyRelative("Category");
+            this.audioSessionParametersModeSp = this.audioSessionParametersSp.FindPropertyRelative("Mode");
+            this.audioSessionParametersCategoryOptionsSp = this.audioSessionParametersSp.FindPropertyRelative("CategoryOptions");
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
             #endif
         }
 
@@ -236,6 +245,7 @@ namespace Photon.Voice.Unity.Editor
                                 #if UNITY_IOS
                                 EditorGUILayout.LabelField("iOS Audio Session Parameters", EditorStyles.boldLabel);
                                 EditorGUI.indentLevel++;
+<<<<<<< HEAD
                                 EditorGUILayout.PropertyField(useCustomAudioSessionParametersSp, new GUIContent("Use Custom"));
                                 if (useCustomAudioSessionParametersSp.boolValue)
                                 {
@@ -264,11 +274,45 @@ namespace Photon.Voice.Unity.Editor
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
                                                     .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.DefaultToSpeaker);
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
+=======
+                                EditorGUILayout.PropertyField(this.useCustomAudioSessionParametersSp, new GUIContent("Use Custom"));
+                                if (this.useCustomAudioSessionParametersSp.boolValue)
+                                {
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersCategorySp);
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersModeSp);
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersCategoryOptionsSp, true);
+                                }
+                                else
+                                {
+                                    int index = EditorGUILayout.Popup("Preset", this.audioSessionPresetIndexSp.intValue, this.iOSAudioSessionPresetsNames);
+                                    if (index != this.audioSessionPresetIndexSp.intValue)
+                                    {
+                                        this.audioSessionPresetIndexSp.intValue = index;
+                                        AudioSessionParameters parameters = this.iOSAudioSessionPresetsValues[index];
+                                        this.SetEnumIndex(this.audioSessionParametersCategorySp,
+                                            typeof(AudioSessionCategory), parameters.Category);
+                                        this.SetEnumIndex(this.audioSessionParametersModeSp,
+                                            typeof(AudioSessionMode), parameters.Mode);
+                                        if (parameters.CategoryOptions != null)
+                                        {
+                                            this.audioSessionParametersCategoryOptionsSp.ClearArray();
+                                            this.audioSessionParametersCategoryOptionsSp.arraySize =
+                                                parameters.CategoryOptions.Length;
+                                            if (index == 0)
+                                            {
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+                                                    .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.DefaultToSpeaker);
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                                                     .GetArrayElementAtIndex(1), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.AllowBluetooth);
                                             }
                                             else if (index == 1)
                                             {
+<<<<<<< HEAD
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
+=======
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                                                     .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.AllowBluetooth);
 
                                             }
@@ -423,6 +467,7 @@ namespace Photon.Voice.Unity.Editor
                                 #if UNITY_IOS
                                 EditorGUILayout.LabelField("iOS Audio Session Parameters", EditorStyles.boldLabel);
                                 EditorGUI.indentLevel++;
+<<<<<<< HEAD
                                 EditorGUILayout.PropertyField(useCustomAudioSessionParametersSp, new GUIContent("Use Custom"));
                                 if (useCustomAudioSessionParametersSp.boolValue)
                                 {
@@ -451,11 +496,45 @@ namespace Photon.Voice.Unity.Editor
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
                                                     .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.DefaultToSpeaker);
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
+=======
+                                EditorGUILayout.PropertyField(this.useCustomAudioSessionParametersSp, new GUIContent("Use Custom"));
+                                if (this.useCustomAudioSessionParametersSp.boolValue)
+                                {
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersCategorySp);
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersModeSp);
+                                    EditorGUILayout.PropertyField(this.audioSessionParametersCategoryOptionsSp, true);
+                                }
+                                else
+                                {
+                                    int index = EditorGUILayout.Popup("Preset", this.audioSessionPresetIndexSp.intValue, this.iOSAudioSessionPresetsNames);
+                                    if (index != this.audioSessionPresetIndexSp.intValue)
+                                    {
+                                        this.audioSessionPresetIndexSp.intValue = index;
+                                        AudioSessionParameters parameters = this.iOSAudioSessionPresetsValues[index];
+                                        this.SetEnumIndex(this.audioSessionParametersCategorySp,
+                                            typeof(AudioSessionCategory), parameters.Category);
+                                        this.SetEnumIndex(this.audioSessionParametersModeSp,
+                                            typeof(AudioSessionMode), parameters.Mode);
+                                        if (parameters.CategoryOptions != null)
+                                        {
+                                            this.audioSessionParametersCategoryOptionsSp.ClearArray();
+                                            this.audioSessionParametersCategoryOptionsSp.arraySize =
+                                                parameters.CategoryOptions.Length;
+                                            if (index == 0)
+                                            {
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+                                                    .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.DefaultToSpeaker);
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                                                     .GetArrayElementAtIndex(1), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.AllowBluetooth);
                                             }
                                             else if (index == 1)
                                             {
+<<<<<<< HEAD
                                                 this.SetEnumIndex(audioSessionParametersCategoryOptionsSp
+=======
+                                                this.SetEnumIndex(this.audioSessionParametersCategoryOptionsSp
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                                                     .GetArrayElementAtIndex(0), typeof(AudioSessionCategoryOption), AudioSessionCategoryOption.AllowBluetooth);
 
                                             }
@@ -541,11 +620,15 @@ namespace Photon.Voice.Unity.Editor
                 {
                     this.photonDeviceNames = new string[Recorder.PhotonMicrophoneEnumerator.Count];
                     this.photonDeviceIDs = new int[Recorder.PhotonMicrophoneEnumerator.Count];
+<<<<<<< HEAD
                     List<string> tempNames = new List<string>(this.photonDeviceNames.Length);
+=======
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                     for (int i = 0; i < Recorder.PhotonMicrophoneEnumerator.Count; i++)
                     {
                         this.photonDeviceIDs[i] = Recorder.PhotonMicrophoneEnumerator.IDAtIndex(i);
                         string micName = Recorder.PhotonMicrophoneEnumerator.NameAtIndex(i);
+<<<<<<< HEAD
                         int count = 0;
                         for (int j = 0; j < tempNames.Count; j++)
                         {
@@ -557,6 +640,10 @@ namespace Photon.Voice.Unity.Editor
                         tempNames.Add(string.Format("{0} - {1}{2}", this.photonDeviceIDs[i], micName, count == 0 ? string.Empty : string.Format(" {0}", count)));
                     }
                     this.photonDeviceNames = tempNames.ToArray();
+=======
+                        this.photonDeviceNames[i] = string.Format("{0} - {1} [{2}]", i, micName, this.photonDeviceIDs[i]);
+                    }
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                     this.photonDeviceIndex = Mathf.Clamp(Array.IndexOf(this.photonDeviceIDs,
                             this.recorder.PhotonMicrophoneDeviceId), 0, Recorder.PhotonMicrophoneEnumerator.Count - 1);
                     this.recorder.PhotonMicrophoneDeviceId = this.photonDeviceIDs[this.photonDeviceIndex];
@@ -570,6 +657,10 @@ namespace Photon.Voice.Unity.Editor
         }
         #endif
 
+<<<<<<< HEAD
+=======
+        #if UNITY_IOS
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         private void SetEnumIndex(SerializedProperty property, Type enumType, object enumValue)
         {
             string enumName = Enum.GetName(enumType, enumValue);
@@ -579,5 +670,9 @@ namespace Photon.Voice.Unity.Editor
                 property.enumValueIndex = index;
             }
         }
+<<<<<<< HEAD
+=======
+        #endif
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
     }
 }

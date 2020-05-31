@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 guid: 426c1190ea37a6c478a37b0dad07c631
+<<<<<<< HEAD
 timeCreated: 1524759920
 licenseType: Store
 PluginImporter:
@@ -16,11 +17,57 @@ PluginImporter:
       enabled: 0
       settings: {}
     Editor:
+=======
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      '': Linux
+    second:
+      enabled: 0
+      settings:
+        CPU: x86
+  - first:
+      '': OSXIntel
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      '': OSXIntel64
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Android: Android
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 0
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
         OS: AnyOS
+<<<<<<< HEAD
     Linux:
       enabled: 0
       settings:
@@ -46,6 +93,41 @@ PluginImporter:
       settings:
         CPU: AnyCPU
     WindowsStoreApps:
+=======
+  - first:
+      Facebook: Win
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Facebook: Win64
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: Linux64
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: Win
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: Win64
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
+      Windows Store Apps: WindowsStoreApps
+    second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 1
       settings:
         CPU: X86

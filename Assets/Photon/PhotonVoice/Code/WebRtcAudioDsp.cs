@@ -15,7 +15,11 @@ namespace Photon.Voice.Unity
         private bool aecMobile;
         
         [SerializeField]
+<<<<<<< HEAD
         private bool aecMobileComfortNoise;
+=======
+        private bool aecMobileComfortNoise = false;
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
         [SerializeField]
         private bool agc = true;

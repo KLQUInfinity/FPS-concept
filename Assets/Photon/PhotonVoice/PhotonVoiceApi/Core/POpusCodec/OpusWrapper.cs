@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 ﻿#if ((UNITY_IOS || UNITY_SWITCH) && !UNITY_EDITOR) || __IOS__
 #define DLL_IMPORT_INTERNAL
 #endif
 
+=======
+#if ((UNITY_IOS || UNITY_SWITCH) && !UNITY_EDITOR) || __IOS__
+#define DLL_IMPORT_INTERNAL
+#endif
+
+#if NEEDED//UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN || UNITY_WSA
+// opus.* lib built from original opus repo 
+#else
+#define OPUS_EGPV // renamed to opus_egpv.* lib with interop helpers
+#endif
+
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +29,15 @@ namespace POpusCodec
 #if DLL_IMPORT_INTERNAL
         const string lib_name = "__Internal";
 #else
+<<<<<<< HEAD
         const string lib_name = "opus_egpv";
+=======
+#if OPUS_EGPV
+        const string lib_name = "opus_egpv";
+#else
+        const string lib_name = "opus";
+#endif
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 #endif
         [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int opus_encoder_get_size(Channels channels);
@@ -33,6 +54,10 @@ namespace POpusCodec
         [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int opus_encode_float(IntPtr st, float[] pcm, int frame_size, byte[] data, int max_data_bytes);
 
+<<<<<<< HEAD
+=======
+#if OPUS_EGPV
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int opus_encoder_ctl_set(IntPtr st, OpusCtlSetRequest request, int value);
 
@@ -44,6 +69,22 @@ namespace POpusCodec
 
         [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int opus_decoder_ctl_get(IntPtr st, OpusCtlGetRequest request, ref int value);
+<<<<<<< HEAD
+=======
+#else
+        [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "opus_encoder_ctl")]
+        private static extern int opus_encoder_ctl_set(IntPtr st, OpusCtlSetRequest request, int value);
+
+        [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "opus_encoder_ctl")]
+        private static extern int opus_encoder_ctl_get(IntPtr st, OpusCtlGetRequest request, ref int value);
+
+        [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "opus_decoder_ctl")]
+        private static extern int opus_decoder_ctl_set(IntPtr st, OpusCtlSetRequest request, int value);
+
+        [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "opus_decoder_ctl")]
+        private static extern int opus_decoder_ctl_get(IntPtr st, OpusCtlGetRequest request, ref int value);
+#endif
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
         [DllImport(lib_name, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int opus_decoder_get_size(Channels channels);

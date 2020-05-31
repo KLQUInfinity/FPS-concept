@@ -6,6 +6,17 @@ namespace Photon.Voice
 {
     public class OpusCodec
     {
+<<<<<<< HEAD
+=======
+        static public string Version
+        {
+            get
+            {
+                return OpusLib.Version;
+            }
+        }
+
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         public enum FrameDuration
         {
             Frame2dot5ms = 2500,
@@ -52,6 +63,10 @@ namespace Photon.Voice
                 try
                 {
                     encoder = new OpusEncoder((SamplingRate)i.SamplingRate, (Channels)i.Channels, i.Bitrate, OpusApplicationType.Voip, (Delay)(i.FrameDurationUs * 2 / 1000));
+<<<<<<< HEAD
+=======
+                    logger.LogInfo("[PV] OpusCodec.Encoder created. Opus version " + Version);
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 }
                 catch (Exception e)
                 {
@@ -145,6 +160,10 @@ namespace Photon.Voice
                 try
                 {
                     decoder = new OpusDecoder((SamplingRate)i.SamplingRate, (Channels)i.Channels);
+<<<<<<< HEAD
+=======
+                    logger.LogInfo("[PV] OpusCodec.Decoder created. Opus version " + Version);
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 }
                 catch (Exception e)
                 {
