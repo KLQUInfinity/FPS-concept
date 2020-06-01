@@ -28,11 +28,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
-    //public void Join()
-    //{
-    //    PhotonNetwork.JoinRandomRoom();
-    //}
-
     public void StartGame()
     {
         //VerifyUsername();

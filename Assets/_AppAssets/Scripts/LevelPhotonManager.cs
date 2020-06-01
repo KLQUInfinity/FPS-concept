@@ -6,7 +6,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
 
-public class LevelPhotonManager : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback
+public class LevelPhotonManager : MonoBehaviourPunCallbacks
 {
     #region Singleton
     public static LevelPhotonManager Instance { private set; get; }
@@ -71,22 +71,5 @@ public class LevelPhotonManager : MonoBehaviourPunCallbacks, IPunInstantiateMagi
             }
         }
         base.OnPlayerPropertiesUpdate(targetPlayer, changedProps);
-    }
-
-    public void OnPhotonInstantiate(PhotonMessageInfo info)
-    {
-        info.Sender.TagObject = player;
-    }
-
-    public bool findsomthing(GameObject go)
-    {
-        foreach (Player i in PhotonNetwork.PlayerList)
-        {
-            if (go.Equals(i.TagObject))
-            {
-                return true;
-            }
-        }
-        return false;
     }
 }
