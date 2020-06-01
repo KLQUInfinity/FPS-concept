@@ -761,7 +761,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logLevel: 1
+<<<<<<< HEAD
+=======
   playbackOnlyWhenEnabled: 0
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
   PlayDelayMs: 200
 --- !u!114 &114170008920511210
 MonoBehaviour:

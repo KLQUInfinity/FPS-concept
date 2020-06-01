@@ -58,6 +58,10 @@ namespace Photon.Voice.Unity.UtilityScripts
 
         public void ConnectNow()
         {
+<<<<<<< HEAD
+            Debug.Log("ConnectAndJoin.ConnectNow() will now call: VoiceConnection.ConnectUsingSettings().");
+=======
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
             this.voiceConnection.ConnectUsingSettings();
         }
 

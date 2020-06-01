@@ -1317,7 +1317,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366859201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: -8, y: 1, z: -20}
+=======
   m_LocalPosition: {x: -8, y: 0, z: -20}
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1979019746}
@@ -6023,13 +6027,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eba5753a72c3244c851d7450564c8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  SpawnPosition: {fileID: 366859202}
+=======
   SpawnPosition: {fileID: 0}
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
   PositionOffset: 10
   PrefabsToInstantiate:
   - {fileID: 100002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
   - {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 2}
   - {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
   - {fileID: 100006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+<<<<<<< HEAD
+  manualInstantiation: 0
+=======
   SpawnPoints:
   - {fileID: 366859202}
   AutoSpawn: 1
@@ -6040,6 +6051,7 @@ MonoBehaviour:
   differentPrefabs: 1
   localPrefabSuffix: -Local
   remotePrefabSuffix: -Remote
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 --- !u!114 &1979019748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6053,7 +6065,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoConnect: 1
   Version: 1
+<<<<<<< HEAD
+=======
   MaxPlayers: 4
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 --- !u!114 &1979019749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6667,9 +6682,12 @@ MonoBehaviour:
   loopAudioClip: 1
   reactOnSystemChanges: 0
   autoStart: 1
+<<<<<<< HEAD
+=======
   recordOnlyWhenEnabled: 0
   skipDeviceChangeChecks: 0
   stopRecordingWhenPaused: 0
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 --- !u!114 &2144206273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6700,7 +6718,10 @@ MonoBehaviour:
     Server: 
     Port: 0
     Protocol: 0
+<<<<<<< HEAD
+=======
     AuthMode: 0
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
     EnableLobbyStatistics: 0
     NetworkLogging: 1
   ShowSettings: 0

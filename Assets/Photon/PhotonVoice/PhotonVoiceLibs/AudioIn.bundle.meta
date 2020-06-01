@@ -1,6 +1,24 @@
 fileFormatVersion: 2
 guid: ad78c8fac2575f745aa2d0bc5c8c5a8f
 folderAsset: yes
+<<<<<<< HEAD
+timeCreated: 1512997728
+licenseType: Store
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Android:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+=======
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -50,11 +68,47 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 1
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
         OS: OSX
+<<<<<<< HEAD
+    Linux:
+      enabled: 1
+      settings:
+        CPU: x86
+    Linux64:
+      enabled: 1
+      settings:
+        CPU: x86_64
+    LinuxUniversal:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXIntel:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXIntel64:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXUniversal:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    Win:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    Win64:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    WindowsStoreApps:
+=======
   - first:
       Facebook: Win
     second:
@@ -94,6 +148,7 @@ PluginImporter:
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
       enabled: 0
       settings:
         CPU: AnyCPU

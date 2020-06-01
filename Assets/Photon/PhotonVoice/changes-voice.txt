@@ -1,5 +1,7 @@
 Photon Voice 2 Change Log
 
+<<<<<<< HEAD
+=======
 v2.17 (May 29th, 2020)
    PUN2: v2.18.1 (624dae8c)
    PhotonVoiceApi: revision 5558
@@ -26,6 +28,7 @@ v2.17 (May 29th, 2020)
    CHANGED: [Editor only] minor, RecorderEditor.SetEnumIndex method is used in iOS Editor only.
    CHANGED: minor, consistency, usage of "this." enforced.
 
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 v2.16.1 (April 30th, 2020)
    PUN2: v2.18.1 (624dae8c)
    PhotonVoiceApi: revision 5464

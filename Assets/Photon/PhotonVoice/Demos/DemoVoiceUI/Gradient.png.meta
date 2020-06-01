@@ -3,7 +3,11 @@ guid: 6c4246dd80904b747bd0f2b32a4b5bef
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
+<<<<<<< HEAD
+  serializedVersion: 11
+=======
   serializedVersion: 10
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -57,6 +61,10 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+<<<<<<< HEAD
+  applyGammaDecoding: 1
+=======
+>>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
