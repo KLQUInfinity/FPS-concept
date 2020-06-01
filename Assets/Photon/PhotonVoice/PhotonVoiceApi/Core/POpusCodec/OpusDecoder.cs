@@ -10,10 +10,6 @@ namespace POpusCodec
     public class OpusDecoder : IDisposable
     {
         private IntPtr _handle = IntPtr.Zero;
-<<<<<<< HEAD
-        private string _version = string.Empty;
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         private const int MaxFrameSize = 5760;
 
         // makes sense if OpusEncoder.UseInbandFEC and OpusEncoder.ExpectedPacketLossPercentage are set
@@ -27,17 +23,6 @@ namespace POpusCodec
         private static readonly float[] EmptyBufferFloat = new float[] { };
         private static readonly short[] EmptyBufferShort = new short[] { };
 
-<<<<<<< HEAD
-        public string Version
-        {
-            get
-            {
-                return _version;
-            }
-        }
-
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         private Bandwidth? _previousPacketBandwidth = null;
 
         public Bandwidth? PreviousPacketBandwidth
@@ -66,10 +51,6 @@ namespace POpusCodec
 
             _channelCount = (int)numChannels;
             _handle = Wrapper.opus_decoder_create(outputSamplingRateHz, numChannels);
-<<<<<<< HEAD
-            _version = Marshal.PtrToStringAnsi( Wrapper.opus_get_version_string());
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
             if (_handle == IntPtr.Zero)
             {

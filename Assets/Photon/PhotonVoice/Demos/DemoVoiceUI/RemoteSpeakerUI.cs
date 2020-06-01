@@ -15,35 +15,6 @@ namespace Photon.Voice.DemoVoiceUI
         [SerializeField]
         private Image remoteIsTalking;
 
-<<<<<<< HEAD
-        private Speaker speaker;
-
-        private void Start()
-        {
-            this.nameText = this.GetComponentInChildren<Text>();
-            this.speaker = this.GetComponent<Speaker>();
-            string nick = this.speaker.name;
-            if (this.speaker.Actor != null)
-            {
-                nick = this.speaker.Actor.NickName;
-                if (string.IsNullOrEmpty(nick))
-                {
-                    nick = string.Concat("user ", this.speaker.Actor.ActorNumber);
-                }
-            }
-            this.nameText.text = nick;
-        }
-
-        void Update()
-        {
-            object mutedValue;
-            if (this.speaker.Actor != null && this.speaker.Actor.CustomProperties.TryGetValue(DemoVoiceUI.MutePropKey, out mutedValue))
-            {
-                this.remoteIsMuting.enabled = (bool)mutedValue;
-            }
-            // TODO: It would be nice, if we could show if a user is actually talking right now (Voice Detection)
-            this.remoteIsTalking.enabled = this.speaker.IsPlaying;
-=======
         private void Start()
         {
             this.nameText = this.GetComponentInChildren<Text>();
@@ -79,7 +50,6 @@ namespace Photon.Voice.DemoVoiceUI
                 this.nameText.text = speaker.name;
             }
             //transmitToggle.isOn = speaker.IsPlaying;
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         }
     }
 }

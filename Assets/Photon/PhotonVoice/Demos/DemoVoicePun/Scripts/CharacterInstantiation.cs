@@ -4,32 +4,18 @@
 // </copyright>
 // <summary>
 // Class that handles character instantiation when the actor is joined.
-<<<<<<< HEAD
-// It adds multiple prefabs support to OnJoinedInstantiate.
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 // </summary>
 // <author>developer@photonengine.com</author>
 // ----------------------------------------------------------------------------
 
 namespace ExitGames.Demos.DemoPunVoice
 {
-<<<<<<< HEAD
-=======
     using System.Collections.Generic;
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
     using ExitGames.Client.Photon;
     using Photon.Realtime;
     using UnityEngine;
     using Photon.Pun;
 
-<<<<<<< HEAD
-    public class CharacterInstantiation : MonoBehaviourPunCallbacks, IOnEventCallback
-    {
-        public Transform SpawnPosition;
-        public float PositionOffset = 2.0f;
-        public GameObject[] PrefabsToInstantiate; // set in inspector
-=======
     #if UNITY_EDITOR
     using UnityEditor;
     #endif
@@ -46,39 +32,18 @@ namespace ExitGames.Demos.DemoPunVoice
         public bool AutoSpawn = true;
         public bool UseRandomOffset = true;
         public SpawnSequence Sequence = SpawnSequence.Connection;
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
         public delegate void OnCharacterInstantiated(GameObject character);
         public static event OnCharacterInstantiated CharacterInstantiated;
 
-<<<<<<< HEAD
-        private const byte manualInstantiationEventCode = 1;
-=======
         [SerializeField] 
         private byte manualInstantiationEventCode = 1;
 
         protected int lastUsedSpawnPointIndex = -1;
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
         [SerializeField]
         private bool manualInstantiation;
 
-<<<<<<< HEAD
-        public override void OnJoinedRoom()
-        {
-            if (this.PrefabsToInstantiate != null)
-            {
-                int index = (PhotonNetwork.LocalPlayer.ActorNumber - 1) % 4;
-                Vector3 spawnPos = Vector3.zero;
-                if (this.SpawnPosition != null)
-                {
-                    spawnPos = this.SpawnPosition.position;
-                }
-                Vector3 random = Random.insideUnitSphere;
-                random = this.PositionOffset * random.normalized;
-                spawnPos += random;
-                spawnPos.y = 0;
-=======
         [SerializeField] 
         private bool differentPrefabs;
 
@@ -102,25 +67,16 @@ namespace ExitGames.Demos.DemoPunVoice
                 Vector3 spawnPos;
                 Quaternion spawnRotation;
                 this.GetSpawnPoint(out spawnPos, out spawnRotation);
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 Camera.main.transform.position += spawnPos;
 
                 if (this.manualInstantiation)
                 {
-<<<<<<< HEAD
-                    this.ManualInstantiation(index, spawnPos);
-=======
                     this.ManualInstantiation(index, spawnPos, spawnRotation);
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 }
                 else
                 {
                     GameObject o = this.PrefabsToInstantiate[index];
-<<<<<<< HEAD
-                    o = PhotonNetwork.Instantiate(o.name, spawnPos, Quaternion.identity);
-=======
                     o = PhotonNetwork.Instantiate(o.name, spawnPos, spawnRotation);
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                     if (CharacterInstantiated != null)
                     {
                         CharacterInstantiated(o);
@@ -129,12 +85,6 @@ namespace ExitGames.Demos.DemoPunVoice
             }
         }
 
-<<<<<<< HEAD
-        private void ManualInstantiation(int index, Vector3 position)
-        {
-            GameObject prefab = this.PrefabsToInstantiate[index];
-            GameObject player = Instantiate(prefab, position, Quaternion.identity);
-=======
         private void ManualInstantiation(int index, Vector3 position, Quaternion rotation)
         {
             GameObject prefab = this.PrefabsToInstantiate[index];
@@ -147,18 +97,13 @@ namespace ExitGames.Demos.DemoPunVoice
             {
                 player = Instantiate(prefab, position, rotation);
             }
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
             PhotonView photonView = player.GetComponent<PhotonView>();
 
             if (PhotonNetwork.AllocateViewID(photonView))
             {
                 object[] data =
                 {
-<<<<<<< HEAD
-                    index, player.transform.position, photonView.ViewID
-=======
                     index, player.transform.position, player.transform.rotation, photonView.ViewID
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 };
 
                 RaiseEventOptions raiseEventOptions = new RaiseEventOptions
@@ -167,11 +112,7 @@ namespace ExitGames.Demos.DemoPunVoice
                     CachingOption = EventCaching.AddToRoomCache
                 };
 
-<<<<<<< HEAD
-                PhotonNetwork.RaiseEvent(manualInstantiationEventCode, data, raiseEventOptions, SendOptions.SendReliable);
-=======
                 PhotonNetwork.RaiseEvent(this.manualInstantiationEventCode, data, raiseEventOptions, SendOptions.SendReliable);
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
                 if (CharacterInstantiated != null)
                 {
                     CharacterInstantiated(player);
@@ -187,24 +128,12 @@ namespace ExitGames.Demos.DemoPunVoice
 
         public void OnEvent(EventData photonEvent)
         {
-<<<<<<< HEAD
-            if (photonEvent.Code == manualInstantiationEventCode)
-=======
             if (photonEvent.Code == this.manualInstantiationEventCode)
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
             {
                 object[] data = photonEvent.CustomData as object[];
                 int prefabIndex = (int) data[0];
                 GameObject prefab = this.PrefabsToInstantiate[prefabIndex];
                 Vector3 position = (Vector3)data[1];
-<<<<<<< HEAD
-                GameObject player = Instantiate(prefab, position, Quaternion.identity);
-                PhotonView photonView = player.GetComponent<PhotonView>();
-                photonView.ViewID = (int) data[2];
-            }
-        }
-    }
-=======
                 Quaternion rotation = (Quaternion)data[2];
                 GameObject player;
                 if (this.differentPrefabs)
@@ -427,5 +356,4 @@ namespace ExitGames.Demos.DemoPunVoice
         }
     }
     #endif
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 }

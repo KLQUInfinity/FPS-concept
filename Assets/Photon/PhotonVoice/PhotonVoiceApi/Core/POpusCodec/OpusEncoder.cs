@@ -7,8 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace POpusCodec
 {
-<<<<<<< HEAD
-=======
     static public class OpusLib
     {
         static public string Version
@@ -20,16 +18,11 @@ namespace POpusCodec
         }
     }
 
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
     public class OpusEncoder : IDisposable
     {
         public const int BitrateMax = -1;
 
         private IntPtr _handle = IntPtr.Zero;
-<<<<<<< HEAD
-        private string _version = string.Empty;
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         private const int RecommendedMaxPacketSize = 4000;
         private int _frameSizePerChannel = 960;
         private SamplingRate _inputSamplingRate = SamplingRate.Sampling48000;
@@ -55,17 +48,6 @@ namespace POpusCodec
         private readonly byte[] writePacket = new byte[RecommendedMaxPacketSize];
         private static readonly ArraySegment<byte> EmptyBuffer = new ArraySegment<byte>(new byte[] { });
 
-<<<<<<< HEAD
-        public string Version
-        {
-            get
-            {
-                return _version;
-            }
-        }
-
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
         private Delay _encoderDelay = Delay.Delay20ms;
 
         /// <summary>
@@ -246,10 +228,6 @@ namespace POpusCodec
             _inputSamplingRate = inputSamplingRateHz;
             _inputChannels = numChannels;
             _handle = Wrapper.opus_encoder_create(inputSamplingRateHz, numChannels, applicationType);
-<<<<<<< HEAD
-            _version = Marshal.PtrToStringAnsi(Wrapper.opus_get_version_string());
-=======
->>>>>>> 52cc1095d5af37dd053c569c923f456649f75dfe
 
             if (_handle == IntPtr.Zero)
             {
