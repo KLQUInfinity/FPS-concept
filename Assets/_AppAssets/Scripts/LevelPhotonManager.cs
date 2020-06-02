@@ -43,14 +43,13 @@ public class LevelPhotonManager : MonoBehaviourPunCallbacks
 
     public void InitPlayer(int teamIndex)
     {
-
         //player.GetPhotonView().RPC("SetPlayerName", RpcTarget.OthersBuffered, PhotonNetwork.NickName, teamIndex);
         //player.GetPhotonView().RPC("ActivatePlayer", RpcTarget.AllBuffered);
         player.GetPhotonView().RPC("SetTeamIndex", RpcTarget.AllBuffered, teamIndex);
         myTeamIndex = teamIndex;
         PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable() { { ImportantThings.TeamIndex, teamIndex } });
         player.GetComponent<PlayerController>().ActivatePlayer();
-
+        TeamVoiceSelect.Instance.setVoiceTeam((byte)teamIndex);
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
