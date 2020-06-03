@@ -27,6 +27,8 @@ namespace ExitGames.Demos.DemoPunVoice
 
     public class VoiceDemoUI : MonoBehaviour
     {
+
+        public GameObject teamUi;
         [SerializeField]
         private Text punState;
         [SerializeField]
@@ -369,6 +371,7 @@ namespace ExitGames.Demos.DemoPunVoice
             switch (voiceClientState)
             {
                 case Photon.Realtime.ClientState.Joined:
+                    teamUi.SetActive(true);
                     this.voiceSwitch.interactable = true;
                     this.inGameSettings.SetActive(true);
                     this.voiceSwitchText.text = "Voice Disconnect";
