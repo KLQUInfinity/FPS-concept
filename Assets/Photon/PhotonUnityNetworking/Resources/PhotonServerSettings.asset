@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 
+    AppIdRealtime: 6f8e85bc-8952-4887-b0a3-279e8c6a7a89
     AppIdChat: 
-    AppIdVoice: 
-    AppVersion: 
+    AppIdVoice: d1dd038f-c9cd-428d-92b1-29e01fc93868
+    AppVersion: us
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -44,6 +44,21 @@ MonoBehaviour:
   - ShootContinuous
   - SwitchAim
   - TakeDamage
+  - ActionRPC
+  - APRPC
+  - Jump
+  - LVPRPC
+  - OnAttach
+  - OnDetach
+  - PickupItemInit
+  - PunPickup
+  - PunRespawn
+  - RequestForPickupItems
+  - UpdateAll
+  - UpdateAngularSpeed
+  - UpdateCharacter
+  - UpdateGravity
+  - UpdateJump
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
+  ShowSettings: 1
   DevRegionSetOnce: 0

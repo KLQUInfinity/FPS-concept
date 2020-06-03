@@ -8,6 +8,11 @@
     using UnityEditor;
 
     [System.Serializable]
+    [CreateAssetMenu(
+        fileName = "Module Manifest",
+        menuName = "Game Creator/Developer/Module Manifest",
+        order = 200
+    )]
     public class AssetModule : ScriptableObject
     {
         private const string MSG_BUILD_TITLE = "Building a module will remove the current unity package";
