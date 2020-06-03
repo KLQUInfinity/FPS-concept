@@ -59,3 +59,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Photon/PhotonVoice/PhotonVoiceLibs/iOS/libwebrtc-audio.a
+Assets/Photon/PhotonVoice/PhotonVoiceLibs/iOS/libwebrtc-audio.a.meta
