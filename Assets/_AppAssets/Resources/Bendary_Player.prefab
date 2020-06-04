@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 3684289964379553629}
   - component: {fileID: 8026266550916186820}
   m_Layer: 9
-  m_Name: Player
+  m_Name: Bendary_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
