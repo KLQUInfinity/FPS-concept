@@ -40,13 +40,13 @@ namespace ExitGames.Demos.DemoPunVoice
         private void OnEnable()
         {
             ChangePOV.CameraChanged += this.ChangePOV_CameraChanged;
-            VoiceDemoUI.DebugToggled += this.VoiceDemoUI_DebugToggled;
+           
         }
 
         private void OnDisable()
         {
             ChangePOV.CameraChanged -= this.ChangePOV_CameraChanged;
-            VoiceDemoUI.DebugToggled -= this.VoiceDemoUI_DebugToggled;
+            
         }
 
         private void VoiceDemoUI_DebugToggled(bool debugMode)
