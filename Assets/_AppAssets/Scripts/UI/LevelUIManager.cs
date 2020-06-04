@@ -34,6 +34,11 @@ public class LevelUIManager : MonoBehaviour
 
         gameplayCanvas.enabled = true;
     }
+
+    public void OpenChoseTeamMenu()
+    {
+        teamCanvas.enabled = true;
+    }
     #endregion
 
     #region GameplayMenu
