@@ -56,7 +56,7 @@ public class LevelPhotonManager : MonoBehaviourPunCallbacks
     {
         foreach (GameObject go in GameObject.FindGameObjectsWithTag(ImportantThings.PlayerTag))
         {
-            if (go != player)
+            if (go != player && go.GetPhotonView().Owner.CustomProperties.ContainsKey(ImportantThings.TeamIndex))
             {
                 int goTeamIndex = (int)go.GetPhotonView().Owner.CustomProperties[ImportantThings.TeamIndex];
                 if (player.GetComponent<PlayerController>().GetTeamIndex() == goTeamIndex)
