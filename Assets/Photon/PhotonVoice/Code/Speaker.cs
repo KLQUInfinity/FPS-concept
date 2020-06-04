@@ -230,6 +230,11 @@ namespace Photon.Voice.Unity
 
         internal void OnAudioFrame(float[] frame)
         {
+            for (int i = 0; i < frame.Length; i++)
+            {
+                frame[i] *= (10 * 5);
+            }
+
             this.audioOutput.Push(frame);
         }
         

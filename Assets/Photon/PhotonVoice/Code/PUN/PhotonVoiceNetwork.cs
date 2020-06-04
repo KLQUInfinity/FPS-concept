@@ -256,6 +256,7 @@ namespace Photon.Voice.PUN
             }
         }
 
+       
         protected override Speaker SimpleSpeakerFactory(int playerId, byte voiceId, object userData)
         {
             if (!(userData is int))
