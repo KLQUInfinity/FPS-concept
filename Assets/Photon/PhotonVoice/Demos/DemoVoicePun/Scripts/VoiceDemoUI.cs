@@ -28,7 +28,6 @@ namespace ExitGames.Demos.DemoPunVoice
     public class VoiceDemoUI : MonoBehaviour
     {
 
-        public GameObject teamUi;
 
         PhotonVoiceNetwork punVoiceNetwork;
        
@@ -89,7 +88,7 @@ namespace ExitGames.Demos.DemoPunVoice
             switch (voiceClientState)
             {
                 case Photon.Realtime.ClientState.Joined:
-                    teamUi.SetActive(true);
+                    LevelUIManager.Instance.OpenChoseTeamMenu();
                 break;
                             case Photon.Realtime.ClientState.PeerCreated:
 
