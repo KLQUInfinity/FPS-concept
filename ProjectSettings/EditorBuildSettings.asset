@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_AppAssets/_Scenes/Test Scenes/MainMenu.unity
     guid: d98cb0ee1a96efc4cbf6c2accbc59f44
   - enabled: 1
+    path: Assets/_AppAssets/_Scenes/Test Scenes/Map 1.unity
+    guid: f334da90f8a8d324f9270fc5707a0b22
+  - enabled: 0
     path: Assets/_AppAssets/_Scenes/Test Scenes/Map.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
