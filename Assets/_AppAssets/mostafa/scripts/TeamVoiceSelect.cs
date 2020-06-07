@@ -36,6 +36,6 @@ public class TeamVoiceSelect : MonoBehaviour
     {
         rc.InterestGroup = team;
         PhotonVoiceNetwork.Instance.Client.OpChangeGroups(new byte[0], new byte[1] { team });
-        Debug.Log("aha");
+        print("voice connected");
     }
 }

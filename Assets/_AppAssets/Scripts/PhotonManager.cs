@@ -5,6 +5,7 @@ using Photon.Pun;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Realtime;
+using Photon.Voice;
 
 [RequireComponent(typeof(MainUIManager))]
 public class PhotonManager : MonoBehaviourPunCallbacks

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using GameCreator.Core;
 
 public class LevelUIManager : MonoBehaviour
 {
@@ -25,14 +26,24 @@ public class LevelUIManager : MonoBehaviour
     #region TeamMenu
     [Header("TeamMenu")]
     [SerializeField] private Canvas teamCanvas;
+    [SerializeField] private Trigger whenChoseTeam;
+    [SerializeField] private ActionPhotonInstantiate action;
 
     public void ChoseTeam(int teamIndex)
     {
         teamCanvas.enabled = false;
 
-        LevelPhotonManager.Instance.InitPlayer(teamIndex);
+        //LevelPhotonManager.Instance.InitPlayer(teamIndex);
+        //uiLocalVariables.Get("TeamIndex").Update(teamIndex);
+        whenChoseTeam.Execute();
+        TeamVoiceSelect.Instance.setVoiceTeam((byte)teamIndex);
 
         gameplayCanvas.enabled = true;
+    }
+
+    public void OpenChoseTeamMenu()
+    {
+        teamCanvas.enabled = true;
     }
     #endregion
 

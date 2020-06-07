@@ -580,7 +580,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: 53b206aa87494fc42a28fe6c27009d48, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -599,6 +598,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114143469188776106
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1341,7 +1341,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: cc349c91c3c4efb409aefecbdead7cff, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -1360,6 +1359,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114360914845619946
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3227,6 +3227,7 @@ MonoBehaviour:
   gid: ba3ba9ab-f047-458f-9408-daebb1918229
   characterLocomotion:
     isControllable: 1
+    isBusy: 0
     runSpeed: 4
     angularSpeed: 540
     gravity: -9.81
@@ -3331,6 +3332,7 @@ MonoBehaviour:
     type: 2}
   standFaceUp: {fileID: 74323205600563714, guid: e3a2eebe549364235b59f9dfdc456c61,
     type: 2}
+  timeScaleCoefficient: 1
 --- !u!143 &143183657749212354
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3487,7 +3489,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: c2b3190c70378494f8468384a46ce92c, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -3506,6 +3507,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114475467215782954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3941,6 +3943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 114012188251478228}
+  clickType: 0
 --- !u!114 &114607214028097188
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -4451,7 +4454,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 74605609303626960, guid: ddbb0c2ffa47e48f295597feb916b6f9, type: 2}
   avatarMask: {fileID: 101100000, guid: 1e2e3a9c31a69c142a3fea83ec7e64bd, type: 2}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -4470,6 +4472,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!1 &1760799350182718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,7 +4684,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: 91027eb4695611d4a99fc24430785ada, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -4700,6 +4702,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114391459023417610
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -5213,7 +5216,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: 612b532ab5b0ffe4199293016a77bcfd, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -5232,6 +5234,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114871672877769128
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -5439,7 +5442,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 74441402851494984, guid: ddbb0c2ffa47e48f295597feb916b6f9, type: 2}
   avatarMask: {fileID: 101100000, guid: 1e2e3a9c31a69c142a3fea83ec7e64bd, type: 2}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -5458,6 +5460,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!1 &1938455267900712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,7 +5638,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 74921027414404036, guid: ddbb0c2ffa47e48f295597feb916b6f9, type: 2}
   avatarMask: {fileID: 101100000, guid: 1e2e3a9c31a69c142a3fea83ec7e64bd, type: 2}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -5654,6 +5656,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114864999374450602
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -5852,7 +5855,6 @@ MonoBehaviour:
         m_Calls: []
   clip: {fileID: 7400000, guid: 97a49ea94dc7431459828da556fb30d5, type: 3}
   avatarMask: {fileID: 0}
-  waitTillComplete: 0
   speed:
     optionIndex: 0
     value: 1
@@ -5871,6 +5873,7 @@ MonoBehaviour:
       index: 0
   fadeIn: 0.1
   fadeOut: 0.1
+  waitTillComplete: 0
 --- !u!114 &114190295549393862
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -7228,6 +7231,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9708,6 +9712,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

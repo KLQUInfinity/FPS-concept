@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_AppAssets/_Scenes/Test Scenes/MainMenu.unity
     guid: d98cb0ee1a96efc4cbf6c2accbc59f44
   - enabled: 1
+    path: Assets/_AppAssets/_Scenes/Test Scenes/Map 1.unity
+    guid: f334da90f8a8d324f9270fc5707a0b22
+  - enabled: 0
     path: Assets/_AppAssets/_Scenes/Test Scenes/Map.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -26,4 +29,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Plugins/GameCreator/Examples/Scenes/Example-3.unity
     guid: 049c31a0f8082406eb0a64934aa5f3b4
+  - enabled: 0
+    path: Assets/Ninjutsu Games/PhotonExamples/1. Connection.unity
+    guid: 4ade279678cef3642b93781f13f21eb6
+  - enabled: 0
+    path: Assets/Ninjutsu Games/PhotonExamples/2. Rooms.unity
+    guid: 4628163691e66954ea1270b29fee6117
+  - enabled: 0
+    path: Assets/Ninjutsu Games/PhotonExamples/3. Instantiate.unity
+    guid: fe1590f70472cd34a957888b84408e13
+  - enabled: 0
+    path: Assets/Ninjutsu Games/PhotonExamples/X. GameIO - Zone1.unity
+    guid: 1cbe41677ceecf64d87dc7dcdd41d56d
+  - enabled: 0
+    path: Assets/Ninjutsu Games/PhotonExamples/X. GameIO - Zone2.unity
+    guid: 82bc7ea8d9fa2954782a8ee32106230e
   m_configObjects: {}
