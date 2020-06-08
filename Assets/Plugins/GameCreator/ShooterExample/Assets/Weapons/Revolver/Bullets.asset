@@ -37,7 +37,7 @@ MonoBehaviour:
       targetObject: {fileID: 0}
       select: 1
       index: 0
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   clipSize: 6
   autoReload: 1
   reloadDuration: 1.5
@@ -101,7 +101,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   triggersMask: 1
-  pushForce: 100
+  pushForce: 0
   shootTrail:
     material: {fileID: 0}
     textureMode: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     useShootingTrail: 1
     duration: 0.05
   prefabProjectile: {fileID: 0}
-  prefabImpactEffect: {fileID: 7992671762139973725, guid: fef056483c56b4799964c5429b327668,
+  prefabImpactEffect: {fileID: 7992671762139973725, guid: ce05048034e80844fb1f6c83e53ac715,
     type: 3}
   prefabMuzzleFlash: {fileID: 7992671762139973725, guid: ccce7e8e5b1334789accdd47ca894a2d,
     type: 3}

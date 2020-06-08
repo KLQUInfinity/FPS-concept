@@ -4822,8 +4822,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7992671762139973726}
   - component: {fileID: 6165923012665833257}
+  - component: {fileID: 5949702518862132612}
+  - component: {fileID: 4469779749004135656}
   m_Layer: 0
-  m_Name: Revolver_Impact
+  m_Name: Revolver_Impact 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4859,6 +4861,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initCount: 20
   duration: 10
+--- !u!114 &5949702518862132612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992671762139973725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35c4cdd8c6a37a4397c87f18380ab4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  effect: 2
+  source_id: 0
+  team_id: 0
+  damage_amount: 0
+  effect_duration: 0
+  radius: 0
+  aoe: 0
+--- !u!65 &4469779749004135656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992671762139973725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8025303404720880341
 GameObject:
   m_ObjectHideFlags: 0
