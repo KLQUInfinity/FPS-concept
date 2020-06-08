@@ -2962,6 +2962,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 720320312}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &477541506
 Transform:
   m_ObjectHideFlags: 0
@@ -5080,6 +5091,7 @@ GameObject:
   - component: {fileID: 720320309}
   - component: {fileID: 720320311}
   - component: {fileID: 720320308}
+  - component: {fileID: 720320312}
   m_Layer: 0
   m_Name: Map Camera
   m_TagString: MainCamera
@@ -5172,6 +5184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741fd56c087524678b98559f34fa94ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &720320312
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720320307}
+  m_Enabled: 0
 --- !u!1 &735372443
 GameObject:
   m_ObjectHideFlags: 0
