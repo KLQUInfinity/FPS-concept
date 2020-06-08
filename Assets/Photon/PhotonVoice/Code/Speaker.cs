@@ -12,7 +12,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
+using Sirenix.OdinInspector;
+using System.Reflection;
 
 namespace Photon.Voice.Unity
 {
@@ -47,7 +48,8 @@ namespace Photon.Voice.Unity
 
         ///<summary>Remote audio stream playback delay to compensate packets latency variations. Try 100 - 200 if sound is choppy.</summary> 
         public int PlayDelayMs = 200;
-
+        [ShowInInspector, SerializeField]
+        public float volume;
         #if UNITY_PS4
         /// <summary>Set the PS4 User ID to determine on which controller to play audio.</summary> 
         /// <remarks>
@@ -230,9 +232,10 @@ namespace Photon.Voice.Unity
 
         internal void OnAudioFrame(float[] frame)
         {
+            
             for (int i = 0; i < frame.Length; i++)
             {
-                frame[i] *= (10 * 5);
+                frame[i] *= volume;
             }
 
             this.audioOutput.Push(frame);

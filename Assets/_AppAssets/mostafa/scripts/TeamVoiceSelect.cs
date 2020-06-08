@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class TeamVoiceSelect : MonoBehaviour
 {
     Recorder rc;
@@ -14,6 +15,7 @@ public class TeamVoiceSelect : MonoBehaviour
     private static TeamVoiceSelect _instance;
     public static TeamVoiceSelect Instance { get { return _instance; } }
 
+    public float volume;
 
     private void Awake()
     {
@@ -39,3 +41,4 @@ public class TeamVoiceSelect : MonoBehaviour
         print("voice connected");
     }
 }
+

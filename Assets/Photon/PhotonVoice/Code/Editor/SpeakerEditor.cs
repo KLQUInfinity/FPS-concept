@@ -10,6 +10,7 @@
         private Speaker speaker;
 
         private SerializedProperty playDelayMsSp;
+        private SerializedProperty volume;
         private SerializedProperty playbackOnlyWhenEnabledSp;
 
         #region AnimationCurve
@@ -37,6 +38,7 @@
             this.speaker = this.target as Speaker;
             this.audioSource = this.speaker.GetComponent<AudioSource>();
             this.playDelayMsSp = this.serializedObject.FindProperty("PlayDelayMs");
+            this.volume = this.serializedObject.FindProperty("volume");
             this.playbackOnlyWhenEnabledSp = this.serializedObject.FindProperty("playbackOnlyWhenEnabled");
         }
 
@@ -53,6 +55,8 @@
             EditorGUI.BeginChangeCheck();
 
             EditorGUILayout.PropertyField(this.playDelayMsSp, new GUIContent("Playback Delay (ms)", "Remote audio stream playback delay to compensate packets latency variations. Try 100 - 200 if sound is choppy. Default is 200ms"));
+            EditorGUILayout.PropertyField(this.volume, new GUIContent("volume", "that's why I use C"));
+
             if (EditorApplication.isPlaying)
             {
                 this.speaker.PlaybackOnlyWhenEnabled = EditorGUILayout.Toggle(new GUIContent("Playback Only When Enabled", "If true, component will work only when enabled and active in hierarchy."),

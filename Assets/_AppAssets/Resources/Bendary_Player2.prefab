@@ -143,6 +143,7 @@ MonoBehaviour:
   logLevel: 1
   playbackOnlyWhenEnabled: 0
   PlayDelayMs: 200
+  volume: 0
 --- !u!1 &6601409442426647424
 GameObject:
   m_ObjectHideFlags: 0
